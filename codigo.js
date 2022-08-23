@@ -44,9 +44,25 @@ class celular{
 
 }
 
+class celularAltaGama extends celular{
+    constructor(color, peso, resolucionPantalla, resolucionCamara, memoriaRam, camaraExtra){
+        super(color, peso, resolucionPantalla, resolucionCamara, memoriaRam);
+        this.camaraExtra=camaraExtra;
+    }
+    grabarLento(){
+        alert("Grabando en camara lento")
+    }
+    reconocimientoFacial(){
+        alert("Accediendo por medio de reconocimiento facial")
+    }
+    infoAltaGama(){
+        return this.mostrarInfo() + `La resolución de camara extra es: ${this.camaraExtra}<br><br>`;
+    }
+}
 
-const celu = new celular(`Blue`, `160 g`,`5`,`Full hd`, `2GB`);
-const celu2 = new celular(`Red`, `150 g`,`4`,`Full hd`, `5GB`);
-const celu3 = new celular(`Yellow`, `170 g`,`3`,`Full hd`, `3GB`);
+const celu = new celularAltaGama(`Blue`, `130 g`,`5.2`,`4k`, `3GB`, `full hd`);
+const celu2 = new celularAltaGama(`Red`, `140 g`,`5.1`,`4k`, `2GB`, `hd`);
+
+document.write(`${celu.infoAltaGama()}${celu2.infoAltaGama()}`);
 
     
